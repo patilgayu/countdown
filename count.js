@@ -1,10 +1,11 @@
-const endDate="16th January 2025 4:59 PM"
+let endDate= "16-01-2025 04:59:00"//"16th January 2025 4:59 PM"
 document.getElementById('end-date').innerText=endDate;
-const inputs=document.querySelectorAll('input')
+let inputs=document.querySelectorAll('input')
  
 function clock(){
-    const end=new Date(endDate)
-    const now=new Date()
+    let end=new Date(2025,0,31);
+    let now=new Date();
+    let diff= (end-now)/1000;
         console.log(end);
         console.log(now);
         if(diff<0)return;
@@ -14,5 +15,5 @@ function clock(){
         inputs[3].value=Math.floor(diff%60);
       
 }
-clock()
+setInterval(clock,1000)
  
